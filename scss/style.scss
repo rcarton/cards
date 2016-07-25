@@ -1,0 +1,26 @@
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+  margin: 1em 0 .5em;
+}
+
+.card-form {
+  margin-top: 1em;
+}
+
+.card {
+  float: left;
+  background: pink;
+  margin: .5em;
+  display: table;
+  overflow: hidden;
+
+  .text {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
