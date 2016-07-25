@@ -11,7 +11,7 @@ const FORMATS = {
   },
 }
 
-export default class Format extends React.Component {
+export default class FormatSelect extends React.Component {
   constructor(props) {
     super(props)
     this.onChange = this.onChange.bind(this)
@@ -23,7 +23,7 @@ export default class Format extends React.Component {
 
   getFormatText(format) {
     const f = FORMATS[this.props.value]
-    return `${f.label} (${f.dimensions.height}×${f.dimensions.width})`
+    return `${f.label} (${f.dimensions.height}×${f.dimensions.width} ${f.dimensions.unit})`
   }
 
   render() {
@@ -41,7 +41,7 @@ export default class Format extends React.Component {
   }
 }
 
-Format.defaultProps = {
+FormatSelect.defaultProps = {
   value: INDEX_CARD,
   onChange: () => {}
 }

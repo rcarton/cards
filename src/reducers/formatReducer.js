@@ -1,21 +1,29 @@
 
-import { combineReducers } from 'react-redux'
+import { combineReducers } from 'redux'
+import { FORMAT_SELECT } from 'src/actions'
 
+const INDEX_CARD = 'INDEX_CARD'
 const defaultFormatState = {
-  'INDEX_CARD'
+  [INDEX_CARD]: {
+    id: INDEX_CARD,
+    label: 'Index Card',
+    dimensions: { width: 5, height: 3, unit: 'in' }
+  }
 }
-function available(state=defaultFormatState, action) {
+function available(state=defaultFormatState) {
+  return state
+}
+
+function selected(state=INDEX_CARD, action) {
   switch (action.type) {
-    case FORMAT_CHANGE:
-      return {
-        ...state,
-        format: action.format
-      }
+    case FORMAT_SELECT:
+      return action.format
     default:
       return state
   }
 }
 
+export const getFormat = state => state.format.available[state.format.selected]
 
 export default combineReducers({
   selected,

@@ -1,10 +1,16 @@
 
+import { combineReducers } from 'redux'
+
 const DEFAULT_TPL = {
-  id: '@@default_tpl',
+  id: 'DEFAULT_TPL',
   name: 'Default',
+  style: {
+    fontFamily: 'sans-serif',
+    fontSize: '0.7in'
+  }
 }
 const defaultAvailableTemplates = {
-  [DEFAULT_TPL]: ...DEFAULT_TPL
+  [DEFAULT_TPL.id]: {...DEFAULT_TPL}
 }
 function available(state=defaultAvailableTemplates, action) {
   switch (action.type) {
@@ -12,3 +18,15 @@ function available(state=defaultAvailableTemplates, action) {
       return state
   }
 }
+
+function selected(state=DEFAULT_TPL.id) {
+  return state
+}
+
+export default combineReducers({
+  available,
+  selected
+})
+
+export const getTemplate = state => state.template.available[state.template.selected]
+export const getTemplatesAvailable = state => state.template.available

@@ -1,16 +1,18 @@
 
 import { combineReducers } from 'redux'
-import { FORMAT_CHANGE } from 'src/actions'
 
-import { INDEX_CARD } from 'src/menu/Format'
-import cardForm from './cardFormReducer'
-import cards from './cardsReducer'
-
-
+import cardFormReducer from './cardFormReducer'
+import cardsReducer from './cardsReducer'
+import formatReducer from './formatReducer'
+import templateReducer from './templateReducer'
 
 export default combineReducers({
-  format,
-  cardForm,
-  cards,
+  format: formatReducer,
+  cardForm: cardFormReducer,
+  cards: cardsReducer,
+  template: templateReducer,
 })
+
 export * from './cardsReducer'
+export * from './formatReducer'
+export * from './templateReducer'

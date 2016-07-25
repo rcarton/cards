@@ -3,10 +3,13 @@ export default class Card extends React.Component {
   constructor(props) {
     super(props)
 
-    this.style = {
-      width: '5in',
-      height: '3in',
+    const { width, height, unit } = props.format.dimensions
+    const dimensions = {
+      width: `${width}${unit}`,
+      height: `${height}${unit}`,
     }
+
+    this.style = Object.assign({}, props.template.style, dimensions)
   }
 
   render() {

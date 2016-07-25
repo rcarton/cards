@@ -1,5 +1,5 @@
 
-import Menu from './menu'
+import Menu from './Menu'
 import CardForm from './CardForm'
 import CardList from './CardList'
 
