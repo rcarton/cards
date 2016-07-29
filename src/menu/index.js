@@ -13,15 +13,19 @@ class Menu extends React.Component {
   render() {
     return (
       <div className="menu">
-        <FormatSelect
-          onChange={this.props.onFormatChange}
-          value={this.props.format.selected}
-        />
-        <TemplateSelect
-          onChange={this.props.onSelectTemplate}
-          templates={this.props.templatesAvailable}
-          value={this.props.template.id}
-        />
+        <div className="logo">Cards</div>
+
+        <div className="menu-actions">
+          <FormatSelect
+            onChange={this.props.onFormatChange}
+            value={this.props.format.selected}
+          />
+          <TemplateSelect
+            onChange={this.props.onSelectTemplate}
+            templates={this.props.templatesAvailable}
+            value={this.props.template.id}
+          />
+        </div>
       </div>
     )
   }

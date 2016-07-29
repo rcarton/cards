@@ -5,8 +5,8 @@
   "scripts": {
     "start": "node server.js",
     "lint": "eslint src",
-    "cssw": "node-sass -w --include-path scss scss/style.scss dist/css/style.css",
-    "css": "node-sass --include-path scss scss/style.scss dist/css/style.css"
+    "cssw": "node-sass -w --include-path src src/App.scss dist/css/style.css",
+    "css": "node-sass --include-path src src/App.scss dist/css/style.css"
   },
   "repository": {
     "type": "git",
